@@ -16,7 +16,7 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    NSLog(@"Hello GitHub");
+    NSLog(@"Hello GitHub ADD");
     // Insert code here to initialize your application
 }
 
