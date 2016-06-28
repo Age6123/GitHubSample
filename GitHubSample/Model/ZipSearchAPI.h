@@ -9,11 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @interface ZipSearchAPI : NSObject
-extern NSString *const ZIP_API_URL;
 
+@property NSString *zipNumberPre;
+@property NSString *zipNumberPost;
 @property NSString *state;
 @property NSString *stateName;
 @property NSString *city;
 @property NSString *street;
+
+- (id)initWithZipNumber:(NSString *)aZipNumber;
+- (NSString *)searchZipNumberToAddress;
+- (NSString *)searchAddressToZipNumber;
 
 @end
