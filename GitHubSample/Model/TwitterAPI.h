@@ -13,4 +13,8 @@ extern NSString *const CONSUMER_KEY;
 extern NSString *const CONSUMER_SERCRET;
 extern NSString *const ACCESS_TOKEN;
 extern NSString *const ACCESS_TOKEN_SECRET;
+extern NSString *const API_URL;
+
+- (OAConsumer *)OAConsumer;
+- (OAToken *)OAToaken;
 @end

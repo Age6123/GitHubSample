@@ -39,6 +39,8 @@
 		BBCFC75A1D20E9B600C26F59 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7431D20E9B600C26F59 /* OAToken.m */; };
 		BBCFC75B1D20E9B600C26F59 /* OATokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7451D20E9B600C26F59 /* OATokenManager.m */; };
 		BBCFC75C1D20E9B600C26F59 /* README in Resources */ = {isa = PBXBuildFile; fileRef = BBCFC7471D20E9B600C26F59 /* README */; };
+		BBCFC7661D2108A500C26F59 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7651D2108A500C26F59 /* MainViewController.m */; };
+		BBCFC7691D211FCD00C26F59 /* SearchTweetsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7681D211FCD00C26F59 /* SearchTweetsAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,10 @@
 		BBCFC7451D20E9B600C26F59 /* OATokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OATokenManager.m; sourceTree = "<group>"; };
 		BBCFC7461D20E9B600C26F59 /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthConsumer.h; sourceTree = "<group>"; };
 		BBCFC7471D20E9B600C26F59 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		BBCFC7641D2108A500C26F59 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
+		BBCFC7651D2108A500C26F59 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
+		BBCFC7671D211FCD00C26F59 /* SearchTweetsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchTweetsAPI.h; path = Model/SearchTweetsAPI.h; sourceTree = "<group>"; };
+		BBCFC7681D211FCD00C26F59 /* SearchTweetsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchTweetsAPI.m; path = Model/SearchTweetsAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,8 @@
 			children = (
 				BB45A0101D20C1B3002A4B77 /* TwitterAPI.h */,
 				BB45A0111D20C1B3002A4B77 /* TwitterAPI.m */,
+				BBCFC7671D211FCD00C26F59 /* SearchTweetsAPI.h */,
+				BBCFC7681D211FCD00C26F59 /* SearchTweetsAPI.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -291,6 +299,8 @@
 		BBCFC7631D21035400C26F59 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBCFC7641D2108A500C26F59 /* MainViewController.h */,
+				BBCFC7651D2108A500C26F59 /* MainViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -408,6 +418,7 @@
 				BBCFC74E1D20E9B600C26F59 /* sha1.c in Sources */,
 				BBCFC7571D20E9B600C26F59 /* OARequestParameter.m in Sources */,
 				BBCFC7501D20E9B600C26F59 /* OACall.m in Sources */,
+				BBCFC7661D2108A500C26F59 /* MainViewController.m in Sources */,
 				BBCFC74F1D20E9B600C26F59 /* OAAttachment.m in Sources */,
 				BB78FF3E1D1D07CA00282A4A /* main.m in Sources */,
 				BBCFC7581D20E9B600C26F59 /* OAServiceTicket.m in Sources */,
@@ -417,6 +428,7 @@
 				BBCFC7491D20E9B600C26F59 /* NSMutableURLRequest+Parameters.m in Sources */,
 				BB78FF3B1D1D07CA00282A4A /* AppDelegate.m in Sources */,
 				BBCFC74B1D20E9B600C26F59 /* NSURL+Base.m in Sources */,
+				BBCFC7691D211FCD00C26F59 /* SearchTweetsAPI.m in Sources */,
 				BBCFC7551D20E9B600C26F59 /* OAPlaintextSignatureProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
