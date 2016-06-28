@@ -9,8 +9,9 @@
 #import "AppDelegate.h"
 #import <Accounts/Accounts.h>
 #import "OAuthConsumer.h"
-#import "TwitterAPI.h"
+//#import "TwitterAPI.h"
 #import "SearchTweetsAPI.h"
+#import "ZipSearchAPI.h"
 
 @interface AppDelegate ()
 @property (weak) IBOutlet NSButtonCell *helloButton;
@@ -19,6 +20,12 @@
 @property (weak) IBOutlet NSWindow *window;
 
 @property (nonatomic) ACAccountStore *accountStore;
+
+@property (weak) IBOutlet NSTextField *zipNumber;
+
+
+
+
 @end
 
 @implementation AppDelegate
@@ -38,60 +45,113 @@
 - (IBAction)pushTrendSearch:(id)sender {
     NSLog(@"%s", __func__);
     
-    TwitterAPI *twitterApi = [[TwitterAPI alloc] init];
+//    NSLog(@"%@", self.zipNumber.intValue);
     
-    // Create Consumer & Token
-    OAConsumer *consumer = [twitterApi OAConsumer];
-    OAToken    *token = [twitterApi OAToaken];
+    //NSURLからNSURLRequestを作る
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:ZIP_API_URL]];
     
-//    SearchTweetsAPI *searchTweetsApi = [[SearchTweetsAPI alloc] initWithQuery:@"Tokyo"];
-    
-    // Create Request
-    OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:[NSURL URLWithString:API_URL]
-                                                                   consumer:consumer
-                                                                      token:token
-                                                                      realm:nil
-                                                          signatureProvider:nil];
-    // Send Request
-    OADataFetcher *fetcher = [[OADataFetcher alloc] init];
-    [fetcher fetchDataWithRequest:request
-                         delegate:self
-                didFinishSelector:@selector(requestTokenTicket:didFinishWithData:)
-                  didFailSelector:@selector(requestTokenTicket:didFinishWithError:)];
-}
-
-- (void)requestTokenTicket:(OAServiceTicket *) ticket
-         didFinishWithData:(NSData *)data {
-    
-//    NSLog(@"Data:%@", data);
-    
-    NSError *error;
-    NSArray *array = [NSJSONSerialization JSONObjectWithData:data
+    //サーバーとの通信を行う
+    NSData *json = [NSURLConnection sendSynchronousRequest:request
+                                         returningResponse:nil
+                                                     error:nil];
+    //JSONをパース
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:json
                                                      options:NSJSONReadingAllowFragments
-                                                       error:&error];
-    if (error != nil){
+                                                       error:nil];
+    
+    ZipSearchAPI *zipSearchApi = [[ZipSearchAPI alloc] init];
+    zipSearchApi.state = [array valueForKeyPath:@"state"];
+    zipSearchApi.stateName = [array valueForKeyPath:@"stateName"];
+    zipSearchApi.city = [array valueForKeyPath:@"city"];
+    zipSearchApi.street = [array valueForKeyPath:@"street"];
+    
+    NSLog(@"state:%@", zipSearchApi.state);
+    NSLog(@"stateName:%@", zipSearchApi.stateName);
+    NSLog(@"city:%@", zipSearchApi.city);
+    NSLog(@"street:%@", zipSearchApi.street);
+    
+    
+    //NSURLからNSURLRequestを作る
+    NSString *URL2 = [NSString stringWithFormat:@"http://api.thni.net/jzip/X0401/JSON/J/%@/%@/%@.js",
+                      [zipSearchApi.stateName stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]],
+                      [zipSearchApi.city stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]],
+                      [zipSearchApi.street stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]]];
+
+//    NSLog(@"URL2 : %@", URL2);
+    NSURLRequest *request2 = [NSURLRequest requestWithURL:[NSURL URLWithString:URL2]];
+    
+    //サーバーとの通信を行う
+    NSError *error;
+    NSData *json2 = [NSURLConnection sendSynchronousRequest:request2
+                                         returningResponse:nil
+                                                     error:&error];
+    if( error != nil ){
         NSLog(@"%@", error);
-    }else{
-        NSLog(@"%@", array);
     }
     
-    NSString *str = [[[array valueForKey:@"statuses"] valueForKey:@"user"] valueForKey:@"time_zone"];
-    
-//    NSString *str2 = [str stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-    NSLog(@"%@", str);
-    
-    if( str == nil ){
-        NSLog(@"nil");
-    }else if ( [str  isEqual: @"\"<null>\""] ){
-        NSLog(@"<nill>");
-    }else if ( [str  isEqual: @""] ){
-        NSLog(@"-----");
-    }else {
-        NSLog(@"Else");
-    }
+    //JSONをパース
+    NSArray *array2 = [NSJSONSerialization JSONObjectWithData:json2
+                                                     options:NSJSONReadingAllowFragments
+                                                       error:nil];
+
+    NSLog(@"zipcode:%@", [array2 valueForKey:@"zipcode"]);
+
     
     
-    
+//    TwitterAPI *twitterApi = [[TwitterAPI alloc] init];
+//    
+//    // Create Consumer & Token
+//    OAConsumer *consumer = [twitterApi OAConsumer];
+//    OAToken    *token = [twitterApi OAToaken];
+//    
+////    SearchTweetsAPI *searchTweetsApi = [[SearchTweetsAPI alloc] initWithQuery:@"Tokyo"];
+//    
+//    // Create Request
+//    OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:[NSURL URLWithString:API_URL]
+//                                                                   consumer:consumer
+//                                                                      token:token
+//                                                                      realm:nil
+//                                                          signatureProvider:nil];
+//    // Send Request
+//    OADataFetcher *fetcher = [[OADataFetcher alloc] init];
+//    [fetcher fetchDataWithRequest:request
+//                         delegate:self
+//                didFinishSelector:@selector(requestTokenTicket:didFinishWithData:)
+//                  didFailSelector:@selector(requestTokenTicket:didFinishWithError:)];
+//}
+//
+//- (void)requestTokenTicket:(OAServiceTicket *) ticket
+//         didFinishWithData:(NSData *)data {
+//    
+////    NSLog(@"Data:%@", data);
+//    
+//    NSError *error;
+//    NSArray *array = [NSJSONSerialization JSONObjectWithData:data
+//                                                     options:NSJSONReadingAllowFragments
+//                                                       error:&error];
+//    if (error != nil){
+//        NSLog(@"%@", error);
+//    }else{
+//        NSLog(@"%@", array);
+//    }
+//    
+//    NSString *str = [[[array valueForKey:@"statuses"] valueForKey:@"user"] valueForKey:@"time_zone"];
+//    
+////    NSString *str2 = [str stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+//    NSLog(@"%@", str);
+//    
+//    if( str == nil ){
+//        NSLog(@"nil");
+//    }else if ( [str  isEqual: @"\"<null>\""] ){
+//        NSLog(@"<nill>");
+//    }else if ( [str  isEqual: @""] ){
+//        NSLog(@"-----");
+//    }else {
+//        NSLog(@"Else");
+//    }
+//    
+//    
+//    
 //    NSString *escapedString = [self decodeJSONString:str];
 //    
 //    // Data to String

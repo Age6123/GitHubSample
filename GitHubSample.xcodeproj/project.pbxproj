@@ -16,6 +16,7 @@
 		BB78FF401D1D07CA00282A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB78FF3F1D1D07CA00282A4A /* Assets.xcassets */; };
 		BB78FF431D1D07CA00282A4A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB78FF411D1D07CA00282A4A /* MainMenu.xib */; };
 		BB78FF4E1D1D07CA00282A4A /* GitHubSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78FF4D1D1D07CA00282A4A /* GitHubSampleTests.m */; };
+		BB8444181D22317E000555A0 /* ZipSearchAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8444171D22317E000555A0 /* ZipSearchAPI.m */; };
 		BBCFC7191D20E58900C26F59 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCFC7181D20E58900C26F59 /* Security.framework */; };
 		BBCFC71B1D20E5A000C26F59 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCFC71A1D20E5A000C26F59 /* libxml2.tbd */; };
 		BBCFC7481D20E9B600C26F59 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BBCFC71D1D20E9B600C26F59 /* .gitignore */; };
@@ -69,6 +70,8 @@
 		BB78FF491D1D07CA00282A4A /* GitHubSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB78FF4D1D1D07CA00282A4A /* GitHubSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitHubSampleTests.m; sourceTree = "<group>"; };
 		BB78FF4F1D1D07CA00282A4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB8444161D22317E000555A0 /* ZipSearchAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipSearchAPI.h; path = Model/ZipSearchAPI.h; sourceTree = "<group>"; };
+		BB8444171D22317E000555A0 /* ZipSearchAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipSearchAPI.m; path = Model/ZipSearchAPI.m; sourceTree = "<group>"; };
 		BBCFC7181D20E58900C26F59 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BBCFC71A1D20E5A000C26F59 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		BBCFC71D1D20E9B600C26F59 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				BB45A0111D20C1B3002A4B77 /* TwitterAPI.m */,
 				BBCFC7671D211FCD00C26F59 /* SearchTweetsAPI.h */,
 				BBCFC7681D211FCD00C26F59 /* SearchTweetsAPI.m */,
+				BB8444161D22317E000555A0 /* ZipSearchAPI.h */,
+				BB8444171D22317E000555A0 /* ZipSearchAPI.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 				BB45A0121D20C1B3002A4B77 /* TwitterAPI.m in Sources */,
 				BBCFC7491D20E9B600C26F59 /* NSMutableURLRequest+Parameters.m in Sources */,
 				BB78FF3B1D1D07CA00282A4A /* AppDelegate.m in Sources */,
+				BB8444181D22317E000555A0 /* ZipSearchAPI.m in Sources */,
 				BBCFC74B1D20E9B600C26F59 /* NSURL+Base.m in Sources */,
 				BBCFC7691D211FCD00C26F59 /* SearchTweetsAPI.m in Sources */,
 				BBCFC7551D20E9B600C26F59 /* OAPlaintextSignatureProvider.m in Sources */,
