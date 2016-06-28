@@ -64,23 +64,19 @@
                            completionHandler:^(NSURLResponse *response, NSData *json, NSError *error) {
                               
                                if (error) {
-                                   // エラー処理を行う。
+                                   // エラー処理
                                    NSLog(@"Request Error:%@", error);
-//                                   if (error.code == -1003) {
-//                                       NSLog(@"not found hostname. targetURL=%@", [zipSearchApi searchZipNumberToAddress]);
-//                                   } else if (-1019) {
-//                                       NSLog(@"auth error. reason=%@", error);
-//                                   } else {
-//                                       NSLog(@"unknown error occurred. reason = %@", error);
-//                                   }
                                    
                                } else {
+                                   // 正常処理
                                    NSLog(@"Request OK");
                                    
                                    NSInteger httpStatusCode = ((NSHTTPURLResponse *)response).statusCode;
                                    if (httpStatusCode == 404) {
+                                       // 404エラー処理
                                        NSLog(@"404 NOT FOUND ERROR. targetURL=%@", [zipSearchApi searchZipNumberToAddress]);
                                    } else {
+                                       // 正常処理
                                        NSLog(@"success request!!");
                                        NSLog(@"statusCode = %ld", ((NSHTTPURLResponse *)response).statusCode);
                                        NSLog(@"responseText = %@", [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding]);
@@ -98,24 +94,65 @@
                                        
                                        // メインスレッドでの処理
                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                           
                                            // NSURLからNSURLRequestを作る
                                            NSURLRequest *request2 = [NSURLRequest requestWithURL:[NSURL URLWithString:[zipSearchApi searchAddressToZipNumber]]];
                                            
                                            // サーバーとの通信を行う
-                                           NSError *error;
-                                           NSData *json2 = [NSURLConnection sendSynchronousRequest:request2
-                                                                                 returningResponse:nil
-                                                                                             error:&error];
-                                           if(error){
-                                               NSLog(@"%@", error);
-                                           }
+                                           [NSURLConnection sendAsynchronousRequest:request2
+                                                                              queue:[[NSOperationQueue alloc] init]
+                                                                  completionHandler:^(NSURLResponse *response2, NSData *json2, NSError *error2) {
+                                                                      if (error2) {
+                                                                          // エラー処理
+                                                                          NSLog(@"Request Error:%@", error2);
+                                                                          
+                                                                      } else {
+                                                                          // 正常処理
+                                                                          NSLog(@"Request OK");
+                                                                          
+                                                                          NSInteger httpStatusCode = ((NSHTTPURLResponse *)response2).statusCode;
+                                                                          if (httpStatusCode == 404) {
+                                                                              // 404エラー処理
+                                                                              NSLog(@"404 NOT FOUND ERROR. targetURL=%@", [zipSearchApi searchAddressToZipNumber]);
+                                                                          } else {
+                                                                              // 正常処理
+                                                                              NSLog(@"success request!!");
+                                                                              NSLog(@"statusCode = %ld", ((NSHTTPURLResponse *)response2).statusCode);
+                                                                              NSLog(@"responseText = %@", [[NSString alloc] initWithData:json2 encoding:NSUTF8StringEncoding]);
+                                                                              
+                                                                              // JSONをパース
+                                                                              NSArray *array2 = [NSJSONSerialization JSONObjectWithData:json2
+                                                                                                                                options:NSJSONReadingAllowFragments
+                                                                                                                                  error:nil];
+
+                                                                              
+                                                                              NSLog(@"zipcode:%@", [array2 valueForKey:@"zipcode"]);
+                                                                              
+                                                                          }
+                                                                      
+                                                                      
+                                                                  }
+                                                                }];
                                            
-                                           // JSONをパース
-                                           NSArray *array2 = [NSJSONSerialization JSONObjectWithData:json2
-                                                                                             options:NSJSONReadingAllowFragments
-                                                                                               error:nil];
-                                           // 取得した郵便番号を表示
-                                           NSLog(@"zipcode:%@", [array2 valueForKey:@"zipcode"]);
+                                           
+                                           
+                                           
+                                           
+//                                           // サーバーとの通信を行う
+//                                           NSError *error;
+//                                           NSData *json2 = [NSURLConnection sendSynchronousRequest:request2
+//                                                                                 returningResponse:nil
+//                                                                                             error:&error];
+//                                           if(error){
+//                                               NSLog(@"%@", error);
+//                                           }
+//                                           
+//                                           // JSONをパース
+//                                           NSArray *array2 = [NSJSONSerialization JSONObjectWithData:json2
+//                                                                                             options:NSJSONReadingAllowFragments
+//                                                                                               error:nil];
+//                                           // 取得した郵便番号を表示
+//                                           NSLog(@"zipcode:%@", [array2 valueForKey:@"zipcode"]);
                                        });
                                    }
                                }
