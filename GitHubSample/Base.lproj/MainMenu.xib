@@ -690,13 +690,13 @@
                         </buttonCell>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u2s-Do-5YP">
-                        <rect key="frame" x="180" y="150" width="121" height="32"/>
-                        <buttonCell key="cell" type="push" title="Trend Search" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mdd-Vw-rqQ">
+                        <rect key="frame" x="162" y="150" width="158" height="32"/>
+                        <buttonCell key="cell" type="push" title="Zip Number Search" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mdd-Vw-rqQ">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="pushTrendSearch:" target="Voe-Tx-rLC" id="ZLR-wt-7aV"/>
+                            <action selector="pushZipNumberSearch:" target="Voe-Tx-rLC" id="mVZ-EU-SyJ"/>
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3EK-Yd-C8S">

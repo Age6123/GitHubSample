@@ -18,27 +18,6 @@
 		BB8444181D22317E000555A0 /* ZipSearchAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8444171D22317E000555A0 /* ZipSearchAPI.m */; };
 		BBCFC7191D20E58900C26F59 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCFC7181D20E58900C26F59 /* Security.framework */; };
 		BBCFC71B1D20E5A000C26F59 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCFC71A1D20E5A000C26F59 /* libxml2.tbd */; };
-		BBCFC7481D20E9B600C26F59 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BBCFC71D1D20E9B600C26F59 /* .gitignore */; };
-		BBCFC7491D20E9B600C26F59 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7201D20E9B600C26F59 /* NSMutableURLRequest+Parameters.m */; };
-		BBCFC74A1D20E9B600C26F59 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7221D20E9B600C26F59 /* NSString+URLEncoding.m */; };
-		BBCFC74B1D20E9B600C26F59 /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7241D20E9B600C26F59 /* NSURL+Base.m */; };
-		BBCFC74C1D20E9B600C26F59 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7261D20E9B600C26F59 /* Base64Transcoder.c */; };
-		BBCFC74D1D20E9B600C26F59 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7281D20E9B600C26F59 /* hmac.c */; };
-		BBCFC74E1D20E9B600C26F59 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC72A1D20E9B600C26F59 /* sha1.c */; };
-		BBCFC74F1D20E9B600C26F59 /* OAAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC72D1D20E9B600C26F59 /* OAAttachment.m */; };
-		BBCFC7501D20E9B600C26F59 /* OACall.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC72F1D20E9B600C26F59 /* OACall.m */; };
-		BBCFC7511D20E9B600C26F59 /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7311D20E9B600C26F59 /* OAConsumer.m */; };
-		BBCFC7521D20E9B600C26F59 /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7331D20E9B600C26F59 /* OADataFetcher.m */; };
-		BBCFC7531D20E9B600C26F59 /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7351D20E9B600C26F59 /* OAHMAC_SHA1SignatureProvider.m */; };
-		BBCFC7541D20E9B600C26F59 /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7371D20E9B600C26F59 /* OAMutableURLRequest.m */; };
-		BBCFC7551D20E9B600C26F59 /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7391D20E9B600C26F59 /* OAPlaintextSignatureProvider.m */; };
-		BBCFC7561D20E9B600C26F59 /* OAProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC73B1D20E9B600C26F59 /* OAProblem.m */; };
-		BBCFC7571D20E9B600C26F59 /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC73D1D20E9B600C26F59 /* OARequestParameter.m */; };
-		BBCFC7581D20E9B600C26F59 /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC73F1D20E9B600C26F59 /* OAServiceTicket.m */; };
-		BBCFC7591D20E9B600C26F59 /* OATestServer.rb in Resources */ = {isa = PBXBuildFile; fileRef = BBCFC7411D20E9B600C26F59 /* OATestServer.rb */; };
-		BBCFC75A1D20E9B600C26F59 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7431D20E9B600C26F59 /* OAToken.m */; };
-		BBCFC75B1D20E9B600C26F59 /* OATokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7451D20E9B600C26F59 /* OATokenManager.m */; };
-		BBCFC75C1D20E9B600C26F59 /* README in Resources */ = {isa = PBXBuildFile; fileRef = BBCFC7471D20E9B600C26F59 /* README */; };
 		BBCFC7661D2108A500C26F59 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7651D2108A500C26F59 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -70,47 +49,6 @@
 		BB8444171D22317E000555A0 /* ZipSearchAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipSearchAPI.m; path = Model/ZipSearchAPI.m; sourceTree = "<group>"; };
 		BBCFC7181D20E58900C26F59 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BBCFC71A1D20E5A000C26F59 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		BBCFC71D1D20E9B600C26F59 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		BBCFC71F1D20E9B600C26F59 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
-		BBCFC7201D20E9B600C26F59 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
-		BBCFC7211D20E9B600C26F59 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
-		BBCFC7221D20E9B600C26F59 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
-		BBCFC7231D20E9B600C26F59 /* NSURL+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Base.h"; sourceTree = "<group>"; };
-		BBCFC7241D20E9B600C26F59 /* NSURL+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Base.m"; sourceTree = "<group>"; };
-		BBCFC7261D20E9B600C26F59 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
-		BBCFC7271D20E9B600C26F59 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
-		BBCFC7281D20E9B600C26F59 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
-		BBCFC7291D20E9B600C26F59 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
-		BBCFC72A1D20E9B600C26F59 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
-		BBCFC72B1D20E9B600C26F59 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
-		BBCFC72C1D20E9B600C26F59 /* OAAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAAttachment.h; sourceTree = "<group>"; };
-		BBCFC72D1D20E9B600C26F59 /* OAAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAAttachment.m; sourceTree = "<group>"; };
-		BBCFC72E1D20E9B600C26F59 /* OACall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OACall.h; sourceTree = "<group>"; };
-		BBCFC72F1D20E9B600C26F59 /* OACall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OACall.m; sourceTree = "<group>"; };
-		BBCFC7301D20E9B600C26F59 /* OAConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAConsumer.h; sourceTree = "<group>"; };
-		BBCFC7311D20E9B600C26F59 /* OAConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAConsumer.m; sourceTree = "<group>"; };
-		BBCFC7321D20E9B600C26F59 /* OADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OADataFetcher.h; sourceTree = "<group>"; };
-		BBCFC7331D20E9B600C26F59 /* OADataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OADataFetcher.m; sourceTree = "<group>"; };
-		BBCFC7341D20E9B600C26F59 /* OAHMAC_SHA1SignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAHMAC_SHA1SignatureProvider.h; sourceTree = "<group>"; };
-		BBCFC7351D20E9B600C26F59 /* OAHMAC_SHA1SignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAHMAC_SHA1SignatureProvider.m; sourceTree = "<group>"; };
-		BBCFC7361D20E9B600C26F59 /* OAMutableURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAMutableURLRequest.h; sourceTree = "<group>"; };
-		BBCFC7371D20E9B600C26F59 /* OAMutableURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAMutableURLRequest.m; sourceTree = "<group>"; };
-		BBCFC7381D20E9B600C26F59 /* OAPlaintextSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAPlaintextSignatureProvider.h; sourceTree = "<group>"; };
-		BBCFC7391D20E9B600C26F59 /* OAPlaintextSignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAPlaintextSignatureProvider.m; sourceTree = "<group>"; };
-		BBCFC73A1D20E9B600C26F59 /* OAProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAProblem.h; sourceTree = "<group>"; };
-		BBCFC73B1D20E9B600C26F59 /* OAProblem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAProblem.m; sourceTree = "<group>"; };
-		BBCFC73C1D20E9B600C26F59 /* OARequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OARequestParameter.h; sourceTree = "<group>"; };
-		BBCFC73D1D20E9B600C26F59 /* OARequestParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OARequestParameter.m; sourceTree = "<group>"; };
-		BBCFC73E1D20E9B600C26F59 /* OAServiceTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAServiceTicket.h; sourceTree = "<group>"; };
-		BBCFC73F1D20E9B600C26F59 /* OAServiceTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAServiceTicket.m; sourceTree = "<group>"; };
-		BBCFC7401D20E9B600C26F59 /* OASignatureProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OASignatureProviding.h; sourceTree = "<group>"; };
-		BBCFC7411D20E9B600C26F59 /* OATestServer.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = OATestServer.rb; sourceTree = "<group>"; };
-		BBCFC7421D20E9B600C26F59 /* OAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAToken.h; sourceTree = "<group>"; };
-		BBCFC7431D20E9B600C26F59 /* OAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAToken.m; sourceTree = "<group>"; };
-		BBCFC7441D20E9B600C26F59 /* OATokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OATokenManager.h; sourceTree = "<group>"; };
-		BBCFC7451D20E9B600C26F59 /* OATokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OATokenManager.m; sourceTree = "<group>"; };
-		BBCFC7461D20E9B600C26F59 /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthConsumer.h; sourceTree = "<group>"; };
-		BBCFC7471D20E9B600C26F59 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		BBCFC7641D2108A500C26F59 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
 		BBCFC7651D2108A500C26F59 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,7 +110,6 @@
 				BB78FF391D1D07CA00282A4A /* AppDelegate.h */,
 				BB78FF3A1D1D07CA00282A4A /* AppDelegate.m */,
 				BBCFC7601D20F6FB00C26F59 /* Assets */,
-				BBCFC75F1D20E9E800C26F59 /* Libs */,
 				BB45A0131D20C1DA002A4B77 /* Models */,
 				BBCFC7631D21035400C26F59 /* Controllers */,
 				BB78FF3C1D1D07CA00282A4A /* Supporting Files */,
@@ -196,78 +133,6 @@
 				BB78FF4F1D1D07CA00282A4A /* Info.plist */,
 			);
 			path = GitHubSampleTests;
-			sourceTree = "<group>";
-		};
-		BBCFC71C1D20E9B600C26F59 /* oauthconsumer-master */ = {
-			isa = PBXGroup;
-			children = (
-				BBCFC71D1D20E9B600C26F59 /* .gitignore */,
-				BBCFC71E1D20E9B600C26F59 /* Categories */,
-				BBCFC7251D20E9B600C26F59 /* Crypto */,
-				BBCFC72C1D20E9B600C26F59 /* OAAttachment.h */,
-				BBCFC72D1D20E9B600C26F59 /* OAAttachment.m */,
-				BBCFC72E1D20E9B600C26F59 /* OACall.h */,
-				BBCFC72F1D20E9B600C26F59 /* OACall.m */,
-				BBCFC7301D20E9B600C26F59 /* OAConsumer.h */,
-				BBCFC7311D20E9B600C26F59 /* OAConsumer.m */,
-				BBCFC7321D20E9B600C26F59 /* OADataFetcher.h */,
-				BBCFC7331D20E9B600C26F59 /* OADataFetcher.m */,
-				BBCFC7341D20E9B600C26F59 /* OAHMAC_SHA1SignatureProvider.h */,
-				BBCFC7351D20E9B600C26F59 /* OAHMAC_SHA1SignatureProvider.m */,
-				BBCFC7361D20E9B600C26F59 /* OAMutableURLRequest.h */,
-				BBCFC7371D20E9B600C26F59 /* OAMutableURLRequest.m */,
-				BBCFC7381D20E9B600C26F59 /* OAPlaintextSignatureProvider.h */,
-				BBCFC7391D20E9B600C26F59 /* OAPlaintextSignatureProvider.m */,
-				BBCFC73A1D20E9B600C26F59 /* OAProblem.h */,
-				BBCFC73B1D20E9B600C26F59 /* OAProblem.m */,
-				BBCFC73C1D20E9B600C26F59 /* OARequestParameter.h */,
-				BBCFC73D1D20E9B600C26F59 /* OARequestParameter.m */,
-				BBCFC73E1D20E9B600C26F59 /* OAServiceTicket.h */,
-				BBCFC73F1D20E9B600C26F59 /* OAServiceTicket.m */,
-				BBCFC7401D20E9B600C26F59 /* OASignatureProviding.h */,
-				BBCFC7411D20E9B600C26F59 /* OATestServer.rb */,
-				BBCFC7421D20E9B600C26F59 /* OAToken.h */,
-				BBCFC7431D20E9B600C26F59 /* OAToken.m */,
-				BBCFC7441D20E9B600C26F59 /* OATokenManager.h */,
-				BBCFC7451D20E9B600C26F59 /* OATokenManager.m */,
-				BBCFC7461D20E9B600C26F59 /* OAuthConsumer.h */,
-				BBCFC7471D20E9B600C26F59 /* README */,
-			);
-			path = "oauthconsumer-master";
-			sourceTree = "<group>";
-		};
-		BBCFC71E1D20E9B600C26F59 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				BBCFC71F1D20E9B600C26F59 /* NSMutableURLRequest+Parameters.h */,
-				BBCFC7201D20E9B600C26F59 /* NSMutableURLRequest+Parameters.m */,
-				BBCFC7211D20E9B600C26F59 /* NSString+URLEncoding.h */,
-				BBCFC7221D20E9B600C26F59 /* NSString+URLEncoding.m */,
-				BBCFC7231D20E9B600C26F59 /* NSURL+Base.h */,
-				BBCFC7241D20E9B600C26F59 /* NSURL+Base.m */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		BBCFC7251D20E9B600C26F59 /* Crypto */ = {
-			isa = PBXGroup;
-			children = (
-				BBCFC7261D20E9B600C26F59 /* Base64Transcoder.c */,
-				BBCFC7271D20E9B600C26F59 /* Base64Transcoder.h */,
-				BBCFC7281D20E9B600C26F59 /* hmac.c */,
-				BBCFC7291D20E9B600C26F59 /* hmac.h */,
-				BBCFC72A1D20E9B600C26F59 /* sha1.c */,
-				BBCFC72B1D20E9B600C26F59 /* sha1.h */,
-			);
-			path = Crypto;
-			sourceTree = "<group>";
-		};
-		BBCFC75F1D20E9E800C26F59 /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-				BBCFC71C1D20E9B600C26F59 /* oauthconsumer-master */,
-			);
-			name = Libs;
 			sourceTree = "<group>";
 		};
 		BBCFC7601D20F6FB00C26F59 /* Assets */ = {
@@ -380,10 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBCFC75C1D20E9B600C26F59 /* README in Resources */,
-				BBCFC7591D20E9B600C26F59 /* OATestServer.rb in Resources */,
 				BB78FF401D1D07CA00282A4A /* Assets.xcassets in Resources */,
-				BBCFC7481D20E9B600C26F59 /* .gitignore in Resources */,
 				BB78FF431D1D07CA00282A4A /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,28 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBCFC74D1D20E9B600C26F59 /* hmac.c in Sources */,
-				BBCFC75A1D20E9B600C26F59 /* OAToken.m in Sources */,
-				BBCFC7531D20E9B600C26F59 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
-				BBCFC74C1D20E9B600C26F59 /* Base64Transcoder.c in Sources */,
-				BBCFC74A1D20E9B600C26F59 /* NSString+URLEncoding.m in Sources */,
-				BBCFC7561D20E9B600C26F59 /* OAProblem.m in Sources */,
-				BBCFC75B1D20E9B600C26F59 /* OATokenManager.m in Sources */,
-				BBCFC7511D20E9B600C26F59 /* OAConsumer.m in Sources */,
-				BBCFC74E1D20E9B600C26F59 /* sha1.c in Sources */,
-				BBCFC7571D20E9B600C26F59 /* OARequestParameter.m in Sources */,
-				BBCFC7501D20E9B600C26F59 /* OACall.m in Sources */,
 				BBCFC7661D2108A500C26F59 /* MainViewController.m in Sources */,
-				BBCFC74F1D20E9B600C26F59 /* OAAttachment.m in Sources */,
 				BB78FF3E1D1D07CA00282A4A /* main.m in Sources */,
-				BBCFC7581D20E9B600C26F59 /* OAServiceTicket.m in Sources */,
-				BBCFC7541D20E9B600C26F59 /* OAMutableURLRequest.m in Sources */,
-				BBCFC7521D20E9B600C26F59 /* OADataFetcher.m in Sources */,
-				BBCFC7491D20E9B600C26F59 /* NSMutableURLRequest+Parameters.m in Sources */,
 				BB78FF3B1D1D07CA00282A4A /* AppDelegate.m in Sources */,
 				BB8444181D22317E000555A0 /* ZipSearchAPI.m in Sources */,
-				BBCFC74B1D20E9B600C26F59 /* NSURL+Base.m in Sources */,
-				BBCFC7551D20E9B600C26F59 /* OAPlaintextSignatureProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

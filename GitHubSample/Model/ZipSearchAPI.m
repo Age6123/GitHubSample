@@ -26,7 +26,7 @@ NSString *const API_URL_ADDRESS = @"http://api.thni.net/jzip/X0401/JSON/J/%@/%@/
     return self;
 }
 
-- (NSString *)searchZipNumberToAddress{
+- (NSString *)createUrlWithZipNumber{
     if(_zipNumberPre==nil || _zipNumberPost==nil){
         return nil;
     }
@@ -34,7 +34,7 @@ NSString *const API_URL_ADDRESS = @"http://api.thni.net/jzip/X0401/JSON/J/%@/%@/
     return [NSString stringWithFormat:API_URL_ZIP, _zipNumberPre, _zipNumberPost];
 }
 
-- (NSString *)searchAddressToZipNumber{
+- (NSString *)createUrlWithAddress{
     if(_stateName==nil || _stateName==nil || _street==nil){
         return nil;
     }
