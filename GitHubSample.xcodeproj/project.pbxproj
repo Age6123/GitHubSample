@@ -10,7 +10,6 @@
 		BB45A00B1D20BB4D002A4B77 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB45A00A1D20BB4D002A4B77 /* Social.framework */; };
 		BB45A00D1D20BB61002A4B77 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB45A00C1D20BB61002A4B77 /* Accounts.framework */; };
 		BB45A00F1D20BC58002A4B77 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB45A00E1D20BC58002A4B77 /* Cocoa.framework */; };
-		BB45A0121D20C1B3002A4B77 /* TwitterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BB45A0111D20C1B3002A4B77 /* TwitterAPI.m */; };
 		BB78FF3B1D1D07CA00282A4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78FF3A1D1D07CA00282A4A /* AppDelegate.m */; };
 		BB78FF3E1D1D07CA00282A4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78FF3D1D1D07CA00282A4A /* main.m */; };
 		BB78FF401D1D07CA00282A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB78FF3F1D1D07CA00282A4A /* Assets.xcassets */; };
@@ -41,7 +40,6 @@
 		BBCFC75B1D20E9B600C26F59 /* OATokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7451D20E9B600C26F59 /* OATokenManager.m */; };
 		BBCFC75C1D20E9B600C26F59 /* README in Resources */ = {isa = PBXBuildFile; fileRef = BBCFC7471D20E9B600C26F59 /* README */; };
 		BBCFC7661D2108A500C26F59 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7651D2108A500C26F59 /* MainViewController.m */; };
-		BBCFC7691D211FCD00C26F59 /* SearchTweetsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7681D211FCD00C26F59 /* SearchTweetsAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +56,6 @@
 		BB45A00A1D20BB4D002A4B77 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		BB45A00C1D20BB61002A4B77 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		BB45A00E1D20BC58002A4B77 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		BB45A0101D20C1B3002A4B77 /* TwitterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterAPI.h; path = Model/TwitterAPI.h; sourceTree = "<group>"; };
-		BB45A0111D20C1B3002A4B77 /* TwitterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwitterAPI.m; path = Model/TwitterAPI.m; sourceTree = "<group>"; };
 		BB78FF361D1D07CA00282A4A /* GitHubSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB78FF391D1D07CA00282A4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB78FF3A1D1D07CA00282A4A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -117,8 +113,6 @@
 		BBCFC7471D20E9B600C26F59 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		BBCFC7641D2108A500C26F59 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
 		BBCFC7651D2108A500C26F59 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
-		BBCFC7671D211FCD00C26F59 /* SearchTweetsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchTweetsAPI.h; path = Model/SearchTweetsAPI.h; sourceTree = "<group>"; };
-		BBCFC7681D211FCD00C26F59 /* SearchTweetsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchTweetsAPI.m; path = Model/SearchTweetsAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,10 +141,6 @@
 		BB45A0131D20C1DA002A4B77 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BB45A0101D20C1B3002A4B77 /* TwitterAPI.h */,
-				BB45A0111D20C1B3002A4B77 /* TwitterAPI.m */,
-				BBCFC7671D211FCD00C26F59 /* SearchTweetsAPI.h */,
-				BBCFC7681D211FCD00C26F59 /* SearchTweetsAPI.m */,
 				BB8444161D22317E000555A0 /* ZipSearchAPI.h */,
 				BB8444171D22317E000555A0 /* ZipSearchAPI.m */,
 			);
@@ -429,12 +419,10 @@
 				BBCFC7581D20E9B600C26F59 /* OAServiceTicket.m in Sources */,
 				BBCFC7541D20E9B600C26F59 /* OAMutableURLRequest.m in Sources */,
 				BBCFC7521D20E9B600C26F59 /* OADataFetcher.m in Sources */,
-				BB45A0121D20C1B3002A4B77 /* TwitterAPI.m in Sources */,
 				BBCFC7491D20E9B600C26F59 /* NSMutableURLRequest+Parameters.m in Sources */,
 				BB78FF3B1D1D07CA00282A4A /* AppDelegate.m in Sources */,
 				BB8444181D22317E000555A0 /* ZipSearchAPI.m in Sources */,
 				BBCFC74B1D20E9B600C26F59 /* NSURL+Base.m in Sources */,
-				BBCFC7691D211FCD00C26F59 /* SearchTweetsAPI.m in Sources */,
 				BBCFC7551D20E9B600C26F59 /* OAPlaintextSignatureProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
