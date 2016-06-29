@@ -14,17 +14,14 @@
 #import "ZipSearchAPI.h"
 
 @interface AppDelegate ()
+
 @property (weak) IBOutlet NSButtonCell *helloButton;
 @property (weak) IBOutlet NSButton *trendSearchButton;
-
 @property (weak) IBOutlet NSWindow *window;
 
 @property (nonatomic) ACAccountStore *accountStore;
 
 @property (weak) IBOutlet NSTextField *zipNumber;
-
-
-
 
 @end
 
@@ -40,10 +37,6 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
-
-
-
-
 
 - (IBAction)pushHello:(id)sender {
     NSLog(@"%s", __func__);
@@ -66,12 +59,8 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[zipSearchApi searchZipNumberToAddress]]];
     
     
-    // ハンドラーの定義
-    void (^dispachMain)(void);
-    void (^firstHandler)(NSData *data, NSURLResponse *response, NSError *error);
-    void (^secondHandler)(NSData *data, NSURLResponse *response, NSError *error);
-    
-    secondHandler = ^(NSData *data, NSURLResponse *response, NSError *error){
+    // ハンドラの定義
+    void (^secondHandler)(NSData *data, NSURLResponse *response, NSError *error) = ^(NSData *data, NSURLResponse *response, NSError *error){
         if(error){
             // エラー処理
             NSLog(@"Request Error:%@", error);
@@ -96,7 +85,7 @@
         }
     };
     
-    dispachMain = ^{
+    void (^dispachMain)(void) = ^{
         // NSURLからNSURLRequestを作る
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[zipSearchApi searchAddressToZipNumber]]];
         
@@ -106,7 +95,7 @@
                      completionHandler:secondHandler] resume];
     };
     
-    firstHandler = ^(NSData *data, NSURLResponse *response, NSError *error){
+    void (^firstHandler)(NSData *data, NSURLResponse *response, NSError *error) = ^(NSData *data, NSURLResponse *response, NSError *error){
         if(error){
             // エラー処理
             NSLog(@"Request Error:%@", error);
