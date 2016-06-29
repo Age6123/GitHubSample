@@ -17,8 +17,6 @@ NSString *const API_URL_ADDRESS = @"http://api.thni.net/jzip/X0401/JSON/J/%@/%@/
 - (id)initWithZipNumber:(NSString *)aZipNumber {
     if(aZipNumber == nil){
         NSLog(@"Error");
-    }else{
-        NSLog(@"%@", aZipNumber);
     }
     _zipNumberPre = [aZipNumber substringToIndex:3];
     _zipNumberPost = [aZipNumber substringFromIndex:3];

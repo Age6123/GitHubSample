@@ -18,7 +18,6 @@
 		BB8444181D22317E000555A0 /* ZipSearchAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8444171D22317E000555A0 /* ZipSearchAPI.m */; };
 		BBCFC7191D20E58900C26F59 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCFC7181D20E58900C26F59 /* Security.framework */; };
 		BBCFC71B1D20E5A000C26F59 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCFC71A1D20E5A000C26F59 /* libxml2.tbd */; };
-		BBCFC7661D2108A500C26F59 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCFC7651D2108A500C26F59 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +48,6 @@
 		BB8444171D22317E000555A0 /* ZipSearchAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipSearchAPI.m; path = Model/ZipSearchAPI.m; sourceTree = "<group>"; };
 		BBCFC7181D20E58900C26F59 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BBCFC71A1D20E5A000C26F59 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		BBCFC7641D2108A500C26F59 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
-		BBCFC7651D2108A500C26F59 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +156,6 @@
 		BBCFC7631D21035400C26F59 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BBCFC7641D2108A500C26F59 /* MainViewController.h */,
-				BBCFC7651D2108A500C26F59 /* MainViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -264,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBCFC7661D2108A500C26F59 /* MainViewController.m in Sources */,
 				BB78FF3E1D1D07CA00282A4A /* main.m in Sources */,
 				BB78FF3B1D1D07CA00282A4A /* AppDelegate.m in Sources */,
 				BB8444181D22317E000555A0 /* ZipSearchAPI.m in Sources */,
