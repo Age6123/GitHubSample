@@ -8,104 +8,61 @@
 
 #import "AppDelegate.h"
 #import "ZipSearchAPI.h"
+#import "HTTPManager.h"
 
-@interface AppDelegate ()
+@interface AppDelegate (){
+@private
+    NSURLSessionDataTask *_task;
+}
 
 @property (weak) IBOutlet NSButtonCell *helloButton;
 @property (weak) IBOutlet NSButton *trendSearchButton;
 @property (weak) IBOutlet NSWindow *window;
-
 @property (weak) IBOutlet NSTextField *zipNumber;
 
-typedef void (^SecondHandler)(NSData *data, NSURLResponse *response, NSError *error);
-typedef void (^FirstHandler)(NSData *data, NSURLResponse *response, NSError *error);
+@property NSString *message;
+
+
 
 @end
 
-
+//typedef void (^SecondHandler)(NSData*, NSURLResponse*, NSError*);
+//typedef void (^FirstHandler)(NSData*, NSURLResponse*, NSError*);
+void (^FirstHandler)(NSData*, NSURLResponse*, NSError*);
 
 @implementation AppDelegate
 
-SecondHandler secondHandler = ^(NSData *data, NSURLResponse *response, NSError *error){
-    NSString *returnMessage;
-    
-    if(error){
-        // エラー処理
-        returnMessage = [NSString stringWithFormat:@"Request Error:%@", error];
-    }else{
-        // 正常処理
-        
-        // HTTPステータスの判定
-        switch(((NSHTTPURLResponse *)response).statusCode){
-            case 404:
-                // 404エラー処理
-                returnMessage = [NSString stringWithFormat:@"HTTP Status Error:404 NOT FOUND ERROR"];
-                break;
-                
-            default:{
-                // 正常処理
-                NSArray *array = [NSJSONSerialization JSONObjectWithData:data
-                                                                 options:NSJSONReadingAllowFragments
-                                                                   error:nil];
-                returnMessage = [NSString stringWithFormat:@"Request OK: ZipCode=%@", [array valueForKey:@"zipcode"]];
-                break;
-            }
-        }
-    }
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"Second Http Request : %@", returnMessage);
-    });
-};
-
-FirstHandler firstHandler = ^(NSData *data, NSURLResponse *response, NSError *error){
-    NSString *returnMessage;
-    
-    if(error){
-        // エラー処理
-        returnMessage = [NSString stringWithFormat:@"Request Error:%@", error];
-    }else{
-        // 正常処理
-        
-        // HTTPステータスの判定
-        switch(((NSHTTPURLResponse *)response).statusCode){
-            case 404:
-                // 404エラー処理
-                returnMessage = [NSString stringWithFormat:@"HTTP Status Error:404 NOT FOUND ERROR"];
-                break;
-                
-            default:{
-                // 正常処理
-                // JSONをパース
-                NSArray *array = [NSJSONSerialization JSONObjectWithData:data
-                                                                 options:NSJSONReadingAllowFragments
-                                                                   error:nil];
-                // 郵便番号検索APIに取得した情報を格納
-                ZipSearchAPI *zipSearchApi = [[ZipSearchAPI alloc] init];
-                zipSearchApi.state     = [array valueForKeyPath:@"state"];
-                zipSearchApi.stateName = [array valueForKeyPath:@"stateName"];
-                zipSearchApi.city      = [array valueForKeyPath:@"city"];
-                zipSearchApi.street    = [array valueForKeyPath:@"street"];
-                
-                returnMessage = [NSString stringWithFormat:@"Request OK: Address=%@%@%@", zipSearchApi.stateName, zipSearchApi.city, zipSearchApi.street];
-                
-                
-                // NSURLからNSURLRequestを生成
-                NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[zipSearchApi createUrlWithAddress]]];
-                
-                NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-                NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
-                [[session dataTaskWithRequest:request
-                            completionHandler:secondHandler] resume];
-                break;
-            }
-        }
-    }
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"First Http Request : %@", returnMessage);
-    });
-};
-
+//SecondHandler secondHandler = ^(NSData *data, NSURLResponse *response, NSError *error){
+//    NSString *returnMessage;
+//    
+//    if(error){
+//        // エラー処理
+//        returnMessage = [NSString stringWithFormat:@"Request Error:%@", error];
+//    }else{
+//        // 正常処理
+//        
+//        // HTTPステータスの判定
+//        switch(((NSHTTPURLResponse *)response).statusCode){
+//            case 404:
+//                // 404エラー処理
+//                returnMessage = [NSString stringWithFormat:@"HTTP Status Error:404 NOT FOUND ERROR"];
+//                break;
+//                
+//            default:{
+//                // 正常処理
+//                NSArray *array = [NSJSONSerialization JSONObjectWithData:data
+//                                                                 options:NSJSONReadingAllowFragments
+//                                                                   error:nil];
+//                returnMessage = [NSString stringWithFormat:@"Request OK: ZipCode=%@", [array valueForKey:@"zipcode"]];
+//                break;
+//            }
+//        }
+//    }
+//    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        NSLog(@"Second Http Request : %@", returnMessage);
+//    });
+//};
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSLog(@"Hello World");
@@ -134,12 +91,66 @@ FirstHandler firstHandler = ^(NSData *data, NSURLResponse *response, NSError *er
     // 郵便番号検索APIのモデルを生成
     ZipSearchAPI *zipSearchApi = [[ZipSearchAPI alloc] initWithZipNumber:zipNumber];
     
-    // NSURLからNSURLRequestを生成
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[zipSearchApi createUrlWithZipNumber]]];
+    // HTTPManagerの生成
+    HTTPManager *httpManager = [[HTTPManager alloc] initWithZipSearchApi:zipSearchApi];
+    if ([httpManager requestZipSearchApiWithZipNumber]){
+        
+    }
     
-    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
-    [[session dataTaskWithRequest:request
-                completionHandler:firstHandler] resume];
+//    // NSURLからNSURLRequestを生成
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[zipSearchApi createUrlWithZipNumber]]];
+//    
+//    
+//    
+//    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+//    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
+//    
+//    
+//    __block NSString *message = nil;
+//    
+//    
+//    _task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+//        if(error){
+//            // エラー処理
+//            message = [NSString stringWithFormat:@"Request Error:%@", error];
+//        }else{
+//            // 正常処理
+//            // HTTPステータスの判定
+//            switch(((NSHTTPURLResponse *)response).statusCode){
+//                case 404:
+//                    // 404エラー処理
+//                    message = [NSString stringWithFormat:@"HTTP Status Error:404 NOT FOUND ERROR"];
+//                    break;
+//                default:{
+//                    // 正常処理
+//                    // JSONをパース
+//                    NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+//                    
+//                    // 郵便番号検索APIに取得した情報を格納
+//                    ZipSearchAPI *zipSearchApi = [[ZipSearchAPI alloc] initWithArray:array];
+//                    
+//                    message = [NSString stringWithFormat:@"Request OK: Address=%@%@%@", zipSearchApi.stateName, zipSearchApi.city, zipSearchApi.street];
+//                    
+//                    // NSURLからNSURLRequestを生成
+//                    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[zipSearchApi createUrlWithAddress]]];
+//                    
+//                    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+//                    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
+//                    [[session dataTaskWithRequest:request completionHandler:secondHandler] resume];
+//                    break;
+//                }
+//            }
+//        }
+//    }];
+//
+//    
+//    [_task resume];
+//    
+//    while( message == nil ){
+//        sleep(1);
+//    }
+//    NSLog(@"Message : %@", message);
+    
+    
 }
 @end

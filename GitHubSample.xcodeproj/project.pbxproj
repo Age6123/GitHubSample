@@ -10,6 +10,8 @@
 		BB45A00B1D20BB4D002A4B77 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB45A00A1D20BB4D002A4B77 /* Social.framework */; };
 		BB45A00D1D20BB61002A4B77 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB45A00C1D20BB61002A4B77 /* Accounts.framework */; };
 		BB45A00F1D20BC58002A4B77 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB45A00E1D20BC58002A4B77 /* Cocoa.framework */; };
+		BB69C4301D2A2C75006FD259 /* URLRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BB69C42F1D2A2C75006FD259 /* URLRequestFactory.m */; };
+		BB69C4341D2A4104006FD259 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB69C4331D2A4104006FD259 /* HTTPManager.m */; };
 		BB78FF3B1D1D07CA00282A4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78FF3A1D1D07CA00282A4A /* AppDelegate.m */; };
 		BB78FF3E1D1D07CA00282A4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78FF3D1D1D07CA00282A4A /* main.m */; };
 		BB78FF401D1D07CA00282A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB78FF3F1D1D07CA00282A4A /* Assets.xcassets */; };
@@ -34,6 +36,10 @@
 		BB45A00A1D20BB4D002A4B77 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		BB45A00C1D20BB61002A4B77 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		BB45A00E1D20BC58002A4B77 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		BB69C42E1D2A2C75006FD259 /* URLRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLRequestFactory.h; path = Model/URLRequestFactory.h; sourceTree = "<group>"; };
+		BB69C42F1D2A2C75006FD259 /* URLRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLRequestFactory.m; path = Model/URLRequestFactory.m; sourceTree = "<group>"; };
+		BB69C4321D2A4104006FD259 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPManager.h; path = Helper/HTTPManager.h; sourceTree = "<group>"; };
+		BB69C4331D2A4104006FD259 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPManager.m; path = Helper/HTTPManager.m; sourceTree = "<group>"; };
 		BB78FF361D1D07CA00282A4A /* GitHubSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB78FF391D1D07CA00282A4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB78FF3A1D1D07CA00282A4A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,6 +88,17 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		BB69C4311D2A3D00006FD259 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				BB69C42E1D2A2C75006FD259 /* URLRequestFactory.h */,
+				BB69C42F1D2A2C75006FD259 /* URLRequestFactory.m */,
+				BB69C4321D2A4104006FD259 /* HTTPManager.h */,
+				BB69C4331D2A4104006FD259 /* HTTPManager.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		BB78FF2D1D1D07CA00282A4A = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +121,7 @@
 		BB78FF381D1D07CA00282A4A /* GitHubSample */ = {
 			isa = PBXGroup;
 			children = (
+				BB69C4311D2A3D00006FD259 /* Helper */,
 				BB78FF391D1D07CA00282A4A /* AppDelegate.h */,
 				BB78FF3A1D1D07CA00282A4A /* AppDelegate.m */,
 				BBCFC7601D20F6FB00C26F59 /* Assets */,
@@ -259,8 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB69C4341D2A4104006FD259 /* HTTPManager.m in Sources */,
 				BB78FF3E1D1D07CA00282A4A /* main.m in Sources */,
 				BB78FF3B1D1D07CA00282A4A /* AppDelegate.m in Sources */,
+				BB69C4301D2A2C75006FD259 /* URLRequestFactory.m in Sources */,
 				BB8444181D22317E000555A0 /* ZipSearchAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

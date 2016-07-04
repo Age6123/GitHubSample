@@ -18,6 +18,7 @@
 @property NSString *street;
 
 - (id)initWithZipNumber:(NSString *)aZipNumber;
+- (id)initWithArray:(NSArray *)aArray;
 - (NSString *)createUrlWithZipNumber;
 - (NSString *)createUrlWithAddress;
 

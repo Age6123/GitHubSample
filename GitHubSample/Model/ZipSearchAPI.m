@@ -9,7 +9,7 @@
 #import "ZipSearchAPI.h"
 
 // API URL
-NSString *const API_URL_ZIP = @"http://api.thni.net/jzip/X0401/JSON/%@/%@.js";
+NSString *const API_URL_ZIP     = @"http://api.thni.net/jzip/X0401/JSON/%@/%@.js";
 NSString *const API_URL_ADDRESS = @"http://api.thni.net/jzip/X0401/JSON/J/%@/%@/%@.js";
 
 @implementation ZipSearchAPI : NSObject
@@ -20,6 +20,19 @@ NSString *const API_URL_ADDRESS = @"http://api.thni.net/jzip/X0401/JSON/J/%@/%@/
     }
     _zipNumberPre = [aZipNumber substringToIndex:3];
     _zipNumberPost = [aZipNumber substringFromIndex:3];
+    
+    return self;
+}
+
+- (id)initWithArray:(NSArray *)aArray {
+    if(!aArray){
+        return nil;
+    }
+    
+    _state     = [aArray valueForKeyPath:@"state"];
+    _stateName = [aArray valueForKeyPath:@"stateName"];
+    _city      = [aArray valueForKeyPath:@"city"];
+    _street    = [aArray valueForKeyPath:@"street"];
     
     return self;
 }
